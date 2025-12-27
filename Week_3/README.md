@@ -34,10 +34,6 @@ Source code và file [ở đây](https://github.com/tohkabe/dak_magiz/tree/main/
 ### PoC
 [Click here](https://limewire.com/d/Don28#rTGg99sZgz)
 
-Kết quả khi quét bằng VT sẽ không bị đánh dấu là độc bởi vì hook API lành tính (`CreateFileW`) không có tác động gì gây hại cho hệ thống, nó được xem như hành vi thực hiện debug hoặc monitor
-
-![image](https://hackmd.io/_uploads/B1QGlf_Qxg.png)
-
 # EAT Hooking
 ## Export Address Table (EAT)
 Nếu như IAT được dùng để lưu trữ địa chỉ của các API mà chương trình import trong quá trình thực thi, thì EAT (Export Address Table) lại được dùng để lưu trữ địa chỉ của các API mà DLL export ra bên ngoài. Các DLL trong Windows được tạo ra với mục đích để cung cấp các API cho các chương trình khác sử dụng, do đó chúng phải cung cấp thông tin về RVA (Relative Virtual Address) cho các API mà chúng export ra ngoài. Nếu DLL không cung cấp thông tin này, các chương trình sẽ không biết được địa chỉ cụ thể của những API và sẽ không thể sử dụng chúng
